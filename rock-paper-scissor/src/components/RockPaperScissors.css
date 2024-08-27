@@ -1,0 +1,146 @@
+.rps-container {
+    background: linear-gradient(135deg, #e2131a, #fad0c4);
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 3rem;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+  }
+  
+  .rps-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .rps-choices {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .rps-button {
+    background: #ff747467;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .rps-button:hover {
+    background: #410707;
+  }
+  
+  .rps-result {
+    font-size: 1.5em;
+    margin: 20px 0;
+    background: #ff7675;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .rps-choice {
+    font-weight: bold;
+    color: #ffeaa7;
+  }
+  
+  .rps-scoreboard {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  .rps-score {
+    font-weight: bold;
+    color: #d81b1b;
+  }
+  
+  .rps-restart {
+    background: #f74d41;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .rps-restart:hover {
+    background: #e15555;
+  }
+
+@media (max-width: 768px) {
+    .rps-container {
+        padding: 15px;
+        margin-top: 2rem;
+    }
+
+    .rps-title {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      
+      .rps-choices {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+      }
+
+    .rps-button, .rps-restart {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+
+    .rps-result {
+        font-size: 1.2em;
+        padding: 8px;
+    }
+
+    .rps-scoreboard {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .rps-container {
+        padding: 10px;
+        margin-top: 1.5rem;
+    }
+
+    .rps-title {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      
+      .rps-choices {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+      }
+
+    .rps-button, .rps-restart {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+
+    .rps-result {
+        font-size: 1em;
+        padding: 6px;
+    }
+
+    .rps-scoreboard {
+        font-size: 0.9em;
+    }
+}

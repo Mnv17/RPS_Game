@@ -1,0 +1,146 @@
+.pomodoro-container {
+    background: linear-gradient(135deg, #e2131a, #fad0c4);
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 3rem;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+.pomodoro-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pomodoro-timer {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background: #ff7675;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pomodoro-controls {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.pomodoro-button {
+    background: #f74d41;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pomodoro-button:hover {
+    background: #410707;
+}
+
+.pomodoro-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pomodoro-label {
+    font-size: 1em;
+}
+
+.pomodoro-input {
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+}
+
+@media (max-width: 768px) {
+    .pomodoro-container {
+        padding: 15px;
+        margin-top: 2rem;
+    }
+
+    .pomodoro-title {
+        font-size: 1.8em;
+    }
+
+    .pomodoro-timer {
+        font-size: 2.5em;
+        padding: 8px;
+    }
+
+    .pomodoro-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .pomodoro-button {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+
+    .pomodoro-settings {
+        flex-direction: column;
+    }
+
+    .pomodoro-label {
+        font-size: 0.9em;
+    }
+
+    .pomodoro-input {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .pomodoro-container {
+        padding: 10px;
+        margin-top: 1.5rem;
+    }
+
+    .pomodoro-title {
+        font-size: 1.5em;
+    }
+
+    .pomodoro-timer {
+        font-size: 2em;
+        padding: 6px;
+    }
+
+    .pomodoro-controls {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .pomodoro-button {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+
+    .pomodoro-settings {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .pomodoro-label {
+        font-size: 0.8em;
+    }
+
+    .pomodoro-input {
+        font-size: 0.8em;
+    }
+}
