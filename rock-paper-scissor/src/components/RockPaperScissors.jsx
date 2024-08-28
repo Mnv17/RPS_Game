@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { GiRock } from 'react-icons/gi';
-import { LiaHandPaper } from 'react-icons/lia';
-import { LiaHandScissors } from 'react-icons/lia';
+import { FaHandPaper } from "react-icons/fa";
+import { FaHandScissors } from "react-icons/fa6";
 import './RockPaperScissors.css';
 
 const choices = ['Rock', 'Paper', 'Scissors'];
 
 const choiceIcons = {
   Rock: <GiRock className="rps-icon" />,
-  Paper: <LiaHandPaper className="rps-icon" />,
-  Scissors: <LiaHandScissors className="rps-icon" />
+  Paper: <FaHandPaper className="rps-icon" />,
+  Scissors: <FaHandScissors className="rps-icon" />
 };
 
 const RockPaperScissors = () => {
@@ -73,28 +73,27 @@ const RockPaperScissors = () => {
           <GiRock /> Rock
         </button>
         <button key="Paper" className="rps-button" onClick={() => handleChoice('Paper')}>
-          <LiaHandPaper /> Paper
+          <FaHandPaper /> Paper
         </button>
         <button key="Scissors" className="rps-button" onClick={() => handleChoice('Scissors')}>
-          <LiaHandScissors /> Scissors
+          <FaHandScissors /> Scissors
         </button>
       </div>
       <strong className='result'>{result}!</strong>
       {userChoice && (
-        
         <div className="rps-result">
-         
           <div className="rps-player-box">
             <h3>You chose:</h3>
-            {choiceIcons[userChoice]}
+            {React.cloneElement(choiceIcons[userChoice], {
+              className: `rps-icon ${userChoice === 'Scissors' ? 'rps-icon-flip' : ''}`
+            })}
           </div>
           <div className="rps-player-box">
             <h3>Computer chose:</h3>
             {React.cloneElement(choiceIcons[computerChoice], {
-              className: `rps-icon ${['Rock', 'Scissors'].includes(computerChoice) ? 'rps-icon-rotate' : ''}`
+              className: `rps-icon ${computerChoice === 'Rock' ? 'rps-icon-flip' : ''}`
             })}
           </div>
-          
         </div>
       )}
       <div className="rps-scoreboard">

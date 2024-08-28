@@ -33,7 +33,7 @@
 }
 
 .rps-button {
-  background: #f74d41;
+  background: #f74d4160;
   border: none;
   border-radius: 10px;
   padding: 8px 16px; 
@@ -78,6 +78,10 @@
 }
 
 .rps-icon-rotate {
+  transform: scaleX(-1); 
+}
+
+.rps-icon-flip {
   transform: scaleX(-1); 
 }
 
