@@ -12,8 +12,9 @@ function App() {
   const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 
   return (
+    <Router>
     <div className="App">
- <Router>
+
       <div>
         <Navbar />
         <Routes>
@@ -31,8 +32,9 @@ function App() {
         </Routes>
       </div>
       <ToastContainer />
-    </Router>
+   
     </div>
+    </Router>
   );
 }
 
