@@ -26,7 +26,7 @@ function App() {
               <Route path="/" element={<Homepage/>} />
             </>
           ) : (
-            <Route path="*" element={<Navigate to="/" />} />
+            <Route path="*" element={<Navigate to="/login" />} />
           )}
         </Routes>
       </div>
