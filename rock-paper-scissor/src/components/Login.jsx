@@ -10,30 +10,32 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-    if (loggedInUser) {
-      console.log('User already logged in. Redirecting...');
-      navigate('/');
-    }
-  }, [navigate]);
+  // useEffect(() => {
+  //   const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+  //   if (loggedInUser) {
+  //     toast.success('User is logged in. Redirecting...');
+  //     navigate('/');
+  //   }
+  // }, [navigate]);
 
   const handleLogin = (e) => {
     e.preventDefault();
-    setLoading(true); 
+    setLoading(true);
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const user = users.find((u) => u.email === email && u.password === password);
 
     if (user) {
       console.log('Login successful. Redirecting...');
+
       localStorage.setItem('loggedInUser', JSON.stringify(user));
+
       toast.success('Login successful!');
       setTimeout(() => {
-        setLoading(false); 
-        navigate('/'); 
+        setLoading(false);
+        navigate('/');
       }, 1000);
     } else {
-      setLoading(false); 
+      setLoading(false);
       toast.error('Invalid email or password');
     }
   };
@@ -70,7 +72,6 @@ const Login = () => {
       <p>
         Don't have an account? <a href="/signup">Sign Up</a>
       </p>
-     
     </div>
   );
 };

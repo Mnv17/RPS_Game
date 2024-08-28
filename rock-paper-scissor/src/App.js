@@ -5,6 +5,7 @@ import Pomodoro from './components/Pomodoro';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';import Login from './components/Login';
 import Signup from './components/Signup';
 import { ToastContainer } from 'react-toastify';
+import Homepage from './components/Homepage';
 
 function App() {
 
@@ -22,10 +23,10 @@ function App() {
             <>
               <Route path="/rock-paper-scissors" element={<RockPaperScissors />} />
               <Route path="/pomodoro" element={<Pomodoro />} />
-              <Route path="/" element={<Navigate to="/rock-paper-scissors" />} />
+              <Route path="/" element={<Homepage/>} />
             </>
           ) : (
-            <Route path="*" element={<Navigate to="/login" />} />
+            <Route path="*" element={<Navigate to="/" />} />
           )}
         </Routes>
       </div>

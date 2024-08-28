@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
+import { GiRock } from 'react-icons/gi';
+import { LiaHandPaper } from 'react-icons/lia';
+import { LiaHandScissors } from 'react-icons/lia';
 import './RockPaperScissors.css';
 
 const choices = ['Rock', 'Paper', 'Scissors'];
+
+const choiceIcons = {
+  Rock: <GiRock className="rps-icon" />,
+  Paper: <LiaHandPaper className="rps-icon" />,
+  Scissors: <LiaHandScissors className="rps-icon" />
+};
 
 const RockPaperScissors = () => {
   const [userChoice, setUserChoice] = useState('');
@@ -60,15 +69,32 @@ const RockPaperScissors = () => {
     <div className="rps-container">
       <h1 className="rps-title">Rock, Paper, Scissors</h1>
       <div className="rps-choices">
-        {choices.map(choice => (
-          <button key={choice} className="rps-button" onClick={() => handleChoice(choice)}>
-            {choice}
-          </button>
-        ))}
+        <button key="Rock" className="rps-button" onClick={() => handleChoice('Rock')}>
+          <GiRock /> Rock
+        </button>
+        <button key="Paper" className="rps-button" onClick={() => handleChoice('Paper')}>
+          <LiaHandPaper /> Paper
+        </button>
+        <button key="Scissors" className="rps-button" onClick={() => handleChoice('Scissors')}>
+          <LiaHandScissors /> Scissors
+        </button>
       </div>
+      <strong className='result'>{result}!</strong>
       {userChoice && (
+        
         <div className="rps-result">
-          You chose <span className="rps-choice">{userChoice}</span>, Computer chose <span className="rps-choice">{computerChoice}</span>. <strong>{result}!</strong>
+         
+          <div className="rps-player-box">
+            <h3>You chose:</h3>
+            {choiceIcons[userChoice]}
+          </div>
+          <div className="rps-player-box">
+            <h3>Computer chose:</h3>
+            {React.cloneElement(choiceIcons[computerChoice], {
+              className: `rps-icon ${['Rock', 'Scissors'].includes(computerChoice) ? 'rps-icon-rotate' : ''}`
+            })}
+          </div>
+          
         </div>
       )}
       <div className="rps-scoreboard">

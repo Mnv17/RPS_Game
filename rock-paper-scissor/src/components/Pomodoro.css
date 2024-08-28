@@ -31,6 +31,7 @@
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
+    margin-top: 1rem;
 }
 
 .pomodoro-button {
@@ -67,6 +68,22 @@
     border: none;
     font-size: 1em;
 }
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #ffc3d7;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+    height: 20px;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background-color: #920e0e;
+    transition: width 1s ease;
+  }
+  
 
 @media (max-width: 768px) {
     .pomodoro-container {

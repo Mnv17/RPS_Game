@@ -54,16 +54,26 @@ const Pomodoro = () => {
     setBreakDuration(Number(e.target.value));
   };
 
+  const totalDuration = isBreak ? breakDuration * 60 : workDuration * 60;
+  const progressPercentage = ((totalDuration - time) / totalDuration) * 100;
+
   return (
     <div className="pomodoro-container">
       <h1 className="pomodoro-title">{isBreak ? 'Break Time' : 'Work Time'}</h1>
+      
       <div className="pomodoro-timer">
         {formatTime(time)}
       </div>
+
+      <div className="progress-bar-container">
+        <div className="progress-bar" style={{ width: `${progressPercentage}%` }}></div>
+      </div>
+
       <div className="pomodoro-controls">
         <button className="pomodoro-button" onClick={handleStartStop}>{isActive ? 'Stop' : 'Start'}</button>
         <button className="pomodoro-button" onClick={handleReset}>Reset</button>
       </div>
+      
       <div className="pomodoro-settings">
         <label className="pomodoro-label">
           Work Duration (minutes):

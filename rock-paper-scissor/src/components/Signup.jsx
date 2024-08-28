@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; 
+import 'react-toastify/dist/ReactToastify.css';
 import './Auth.css';
 
 const Signup = () => {
@@ -15,13 +15,16 @@ const Signup = () => {
     const existingUser = users.find(u => u.email === email);
 
     if (existingUser) {
-      toast.error('User already exists. Please login.'); 
+      toast.error('User already exists. Please login.');
     } else {
       const newUser = { email, password };
       users.push(newUser);
       localStorage.setItem('users', JSON.stringify(users));
-      toast.success('Account created successfully. Please log in.'); 
-      setTimeout(() => navigate('/login'), 1000); 
+
+      localStorage.setItem(`${email}_data`, JSON.stringify([]));
+
+      toast.success('Account created successfully. Please log in.');
+      setTimeout(() => navigate('/login'), 1000);
     }
   };
 
@@ -29,26 +32,26 @@ const Signup = () => {
     <div className="auth-container">
       <h2>Sign Up</h2>
       <form onSubmit={handleSignup}>
-        <input 
-          type="email" 
-          placeholder="Email" 
-          value={email} 
-          onChange={(e) => setEmail(e.target.value)} 
-          required 
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
         />
-        <input 
-          type="password" 
-          placeholder="Password" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
-          required 
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
         />
         <button type="submit">Sign Up</button>
       </form>
       <p>
         Already have an account? <a href="/login">Login</a>
       </p>
-      <ToastContainer /> 
+      <ToastContainer />
     </div>
   );
 };

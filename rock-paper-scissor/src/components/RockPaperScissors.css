@@ -1,146 +1,205 @@
 .rps-container {
-    background: linear-gradient(135deg, #e2131a, #fad0c4);
-    border-radius: 15px;
-    padding: 20px;
-    max-width: 400px;
-    margin: 0 auto;
-    margin-top: 3rem;
-    text-align: center;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    font-family: 'Arial', sans-serif;
-    color: #fff;
-  }
-  
-  .rps-title {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .rps-choices {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-  }
-  
-  .rps-button {
-    background: #ff747467;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .rps-button:hover {
-    background: #410707;
-  }
-  
-  .rps-result {
-    font-size: 1.5em;
-    margin: 20px 0;
-    background: #ff7675;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .rps-choice {
-    font-weight: bold;
-    color: #ffeaa7;
-  }
-  
-  .rps-scoreboard {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-  }
-  
-  .rps-score {
-    font-weight: bold;
-    color: #d81b1b;
-  }
-  
-  .rps-restart {
-    background: #f74d41;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .rps-restart:hover {
-    background: #e15555;
-  }
+  background: linear-gradient(135deg, #e2131a, #fad0c4);
+  border-radius: 15px;
+  padding: 15px;
+  width: 100%; 
+  max-width: 40rem; 
+  height: auto;
+  margin: 0 auto;
+  margin-top: 3rem;
+  text-align: center;
+  box-shadow: 0 8px 15px rgba(245, 47, 90, 0.2);
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  animation: fadeIn 1s ease;
+  overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.rps-title {
+  font-size: 2em;
+  margin-bottom: 15px; 
+}
+
+.rps-choices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  margin-bottom: 15px; 
+}
+
+.rps-button {
+  background: #f74d41;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 16px; 
+  color: #fff;
+  font-size: 1.1em; 
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 5px; 
+}
+
+.rps-button:hover {
+  background: #e15555;
+}
+
+.rps-button:active {
+  background: #d14b4b;
+}
+
+.rps-result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  margin: 15px 0;
+  font-size: 1.3em; 
+}
+
+.rps-player-box {
+  background: #ff7675;
+  padding: 15px; 
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  max-width: 45%; 
+  margin: 10px; 
+  text-align: center;
+}
+
+.rps-icon {
+  font-size: 3.5em; 
+  margin: 10px;
+}
+
+.rps-icon-rotate {
+  transform: scaleX(-1); 
+}
+
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.result {
+  display: block;
+  margin: 10px 0;
+  font-size: larger;
+  font-weight: bold;
+  color: #1f0c13;
+  animation: pulse 1.5s infinite;
+}
+
+
+
+.rps-scoreboard {
+  font-size: 1.1em; 
+  margin-bottom: 15px; 
+}
+
+.rps-score {
+  font-weight: bold;
+  color: #d81b1b;
+}
+
+.rps-restart {
+  background: #f74d41;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px; 
+  font-size: 1.1em; 
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.rps-restart:hover {
+  background: #e15555;
+  transform: scale(1.05);
+}
+
+.rps-restart:active {
+  transform: scale(0.95);
+}
 
 @media (max-width: 768px) {
-    .rps-container {
-        padding: 15px;
-        margin-top: 2rem;
-    }
+  .rps-container {
+      padding: 10px; 
+      margin-top: 2rem;
+  }
 
-    .rps-title {
-        font-size: 1.5em;
-        margin-bottom: 20px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-      }
-      
-      .rps-choices {
-        display: flex;
-        justify-content: space-around;
-        margin-bottom: 20px;
-      }
+  .rps-title {
+      font-size: 1.5em;
+  }
+    
+  .rps-choices {
+      flex-direction: column;
+  }
 
-    .rps-button, .rps-restart {
-        font-size: 1em;
-        padding: 8px 16px;
-    }
+  .rps-button {
+      font-size: 1em;
+      padding: 8px 16px;
+  }
 
-    .rps-result {
-        font-size: 1.2em;
-        padding: 8px;
-    }
+  .rps-result {
+      font-size: 1.2em;
+      flex-direction: column;
+  }
 
-    .rps-scoreboard {
-        font-size: 1em;
-    }
+  .rps-player-box {
+      max-width: 90%;
+  }
+
+  .rps-scoreboard {
+      font-size: 1em;
+  }
+
+  .rps-icon {
+      font-size: 3em;
+  }
 }
 
 @media (max-width: 480px) {
-    .rps-container {
-        padding: 10px;
-        margin-top: 1.5rem;
-    }
+  .rps-container {
+      padding: 8px; 
+      margin-top: 1.5rem;
+  }
 
-    .rps-title {
-        font-size: 1.5em;
-        margin-bottom: 20px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-      }
-      
-      .rps-choices {
-        display: flex;
-        justify-content: space-around;
-        margin-bottom: 20px;
-      }
+  .rps-title {
+      font-size: 1.5em;
+  }
 
-    .rps-button, .rps-restart {
-        font-size: 0.9em;
-        padding: 6px 12px;
-    }
+  .rps-choices {
+      flex-direction: column;
+  }
 
-    .rps-result {
-        font-size: 1em;
-        padding: 6px;
-    }
+  .rps-button {
+      font-size: 0.9em;
+      padding: 6px 12px;
+  }
 
-    .rps-scoreboard {
-        font-size: 0.9em;
-    }
+  .rps-result {
+      font-size: 1em;
+      flex-direction: column;
+  }
+
+  .rps-player-box {
+      max-width: 100%; 
+  }
+
+  .rps-scoreboard {
+      font-size: 0.9em;
+  }
+
+  .rps-icon {
+      font-size: 2.5em;
+  }
 }
